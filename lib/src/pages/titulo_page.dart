@@ -23,7 +23,7 @@ class _TituloPageState extends State<TituloPage> {
                     child: FloatingActionButton(
                       onPressed: null,
                       backgroundColor: Colors.grey,
-                      child: Icon(Icons.import_contacts_rounded),
+                      child: Icon(Icons.import_contacts),
                     ),
                   ),
                 ],
@@ -39,11 +39,13 @@ class _TituloPageState extends State<TituloPage> {
                       style:
                           TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
+                    espacio(),
                     Container(
                       width: 100,
                       height: 4,
                       color: Colors.black,
                     ),
+                    espacio(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -79,138 +81,40 @@ class _TituloPageState extends State<TituloPage> {
                         ),
                       ],
                     ),
+                    espacio(),
                     Text(
                       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
+                    espacio(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Chapters',
+                          'Volumens',
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w600),
                         ),
                         Text('All Chapters'),
                       ],
                     ),
+                    espacio(),
                     Container(
                       height: 220,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          Card(
-                            semanticContainer: true,
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: Container(
-                              child: Image(
-                                image: AssetImage('assets/tokio-bg.png'),
-                                height: 100,
-                                width: 170,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 5,
-                          ),
+                          volumeCard('assets/tg-v1.jpg'),
+                          espacio(),
+                          volumeCard('assets/tg-v2.jpg'),
+                          espacio(),
+                          volumeCard('assets/tg-v1.jpg'),
+                          espacio(),
+                          volumeCard('assets/tg-v2.jpg'),
+                          espacio(),
+                          volumeCard('assets/tg-v1.jpg'),
+                          espacio(),
+                          volumeCard('assets/tg-v2.jpg'),
                         ],
                       ),
                     )
@@ -221,6 +125,32 @@ class _TituloPageState extends State<TituloPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Card volumeCard(String path) {
+    return Card(
+      semanticContainer: true,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Container(
+        child: Image(
+          image: AssetImage(path),
+          height: 100,
+          width: 170,
+          fit: BoxFit.cover,
+        ),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      elevation: 5,
+    );
+  }
+
+  SizedBox espacio() {
+    return SizedBox(
+      height: 20.0,
+      width: 15.0,
     );
   }
 }
